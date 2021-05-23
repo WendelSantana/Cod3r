@@ -1,5 +1,5 @@
 // Comentário de uma linha
-console.log('linah 1');
+console.log('Linha 1');
 
 /*
 Comentário 
