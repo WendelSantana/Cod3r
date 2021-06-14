@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Exercícios HTML</title>
     <style>
+
         #conteudo {
-            font-size: 24px;
+            font-size: 15px;
         }
+
     </style>
 </head>
 <style>
-    h1 {
+    h2 {
         background-color: #000;
+        font-size: 30px;
         color: #fff;
     }
 </style>
@@ -22,23 +25,25 @@
         <h1>Exercícios HTML</h1>
     </header>
     <nav>
-        <a href="teste1.html">Teste</a> |
-        <a href="texto1.html">Texto 1</a> | 
-        <a href="texto2.html">Texto 2</a> |
-        <a href="listas.html">Listas 1</a>
+        <a href wm-nav ="teste1.html">Teste</a> |
+        <a href wm-nav ="texto1.html">Texto 1</a> | 
+        <a href wm-nav ="texto2.html">Texto 2</a> |
+        <a href wm-nav ="listas.html">Listas</a> |
+        <a href wm-nav ="listaAninhada.html">Lista Aninhada</a> |
+        <a href wm-nav ="a/links.html">Links</a> 
     </nav><br>
-    <section id = "conteudo">Curso Web Moderno</section>
+    <section id = "conteudo"></section>
     <footer>
         <br>
         Curso Web Moderno
     </footer>
     <script>
-        document.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('[wm-nav]').forEach(link => {
             const conteudo = document.getElementById('conteudo')
-                    
+            
             link.onclick = function(e) {
                 e. preventDefault()
-                fetch(link.href)
+                fetch(link.getAttribute('wm-nav'))
                     .then(resp => resp.text())
                     .then(html => conteudo.innerHTML = html)
             }
